@@ -1,0 +1,45 @@
+[
+  {
+    "nama": "Sate Ayam betina",    
+    "harga": 21000,
+    "gambar": "sate-ayam.jpg"
+  },
+  {
+    "nama": "Nasi Goreng Hater",    
+    "harga": 120000,
+    "gambar": "nasi-goreng-telor.jpg"
+  },
+  {
+    "nama": "Nasi Meresahkan Umat",    
+    "harga": 1,
+    "gambar":"nasi-rames.jpg"
+  },
+  {
+    "nama": "Bakso Sundul Bolong",    
+    "harga": 50000,
+    "gambar": "bakso.jpg"
+  },
+  {
+    "nama": "Mi Pitik Mati",    
+    "harga": 5000,
+    "gambar": "mie-ayam-bakso.jpg"
+  },
+  {
+    "nama": "Mi Gorengan Teles",    
+    "harga": 2000,
+    "gambar": "mie-goreng.jpg"
+  },
+
+  {
+    "nama": "Burger Ra nggenah",    
+    "harga": 20,
+    "gambar": "cheese-burger.jpg"
+  },
+
+  {
+    "nama": "Pangsit Kacau",   
+    "harga": 2100,
+    "gambar": "pangsit.jpg"
+  }
+  
+]
