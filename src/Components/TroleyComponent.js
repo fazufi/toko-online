@@ -5,10 +5,9 @@ import {
   ListGroup,
   Badge,
   Button,
-  ButtonGroup 
+  ButtonGroup,
 } from "react-bootstrap";
 import Swal from "sweetalert2";
-
 
 export default class TroleyComponent extends Component {
   render() {
@@ -28,17 +27,17 @@ export default class TroleyComponent extends Component {
                       {item.jumlah}
                     </Badge>
                   </h4>
-                  <p> <ButtonGroup className="horizontal">                   
-                    <Button onClick={() => this.props.KeluarTroley(item)}>
-                      -
-                    </Button>
-                    <Button
-                      onClick={() => this.props.MasukTroley(item)}>
-                      +
-                    </Button>
-                  </ButtonGroup></p>
-                  
-                </Col >
+                  <div>
+                    <ButtonGroup className="horizontal">
+                      <Button onClick={() => this.props.KeluarTroley(item)}>
+                        -
+                      </Button>
+                      <Button onClick={() => this.props.MasukTroley(item)}>
+                        +
+                      </Button>
+                    </ButtonGroup>
+                  </div>
+                </Col>
                 <Col className="ml-5" xs={5}>
                   <h5>{item.nama}</h5>
                   <p>Rp {item.harga.toLocaleString()}</p>
@@ -49,24 +48,23 @@ export default class TroleyComponent extends Component {
                   </strong>
                 </Col>
               </Row>
-             
             </ListGroup.Item>
           ))}
         </ListGroup>
-        <Button          
+        <Button
           size="lg"
           block
           onClick={
             this.props.Troley.length > 0
               ? () => {
                   this.props.openModal();
-                  this.props.totalsemua()
+                  this.props.totalsemua();
                 }
               : () =>
                   Swal.fire({
                     position: "Center",
                     icon: "error",
-                    title: "ANDA BELUM MEMPUNYAI PESANAN",                    
+                    title: "ANDA BELUM MEMPUNYAI PESANAN",
                     timer: 5000,
                   })
           }
