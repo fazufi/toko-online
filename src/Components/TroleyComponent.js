@@ -28,7 +28,7 @@ export default class TroleyComponent extends Component {
                       {item.jumlah}
                     </Badge>
                   </h4>
-                  <ButtonGroup horizontal>                   
+                  <ButtonGroup className="horizontal">                   
                     <Button onClick={() => this.props.KeluarTroley(item)}>
                       -
                     </Button>
