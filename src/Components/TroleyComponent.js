@@ -22,13 +22,13 @@ export default class TroleyComponent extends Component {
           {this.props.Troley.map((item, b) => (
             <ListGroup.Item key={b}>
               <Row>
-                <Col xs={2}>
+                <Col xs={3}>
                   <h4>
                     <Badge pill variant="success" className="ml-3">
                       {item.jumlah}
                     </Badge>
                   </h4>
-                  <ButtonGroup className="horizontal">                   
+                  <p> <ButtonGroup className="horizontal">                   
                     <Button onClick={() => this.props.KeluarTroley(item)}>
                       -
                     </Button>
@@ -36,9 +36,10 @@ export default class TroleyComponent extends Component {
                       onClick={() => this.props.MasukTroley(item)}>
                       +
                     </Button>
-                  </ButtonGroup>
-                </Col>
-                <Col>
+                  </ButtonGroup></p>
+                  
+                </Col >
+                <Col className="ml-5" xs={5}>
                   <h5>{item.nama}</h5>
                   <p>Rp {item.harga.toLocaleString()}</p>
                 </Col>
@@ -48,7 +49,7 @@ export default class TroleyComponent extends Component {
                   </strong>
                 </Col>
               </Row>
-              <Row></Row>
+             
             </ListGroup.Item>
           ))}
         </ListGroup>
