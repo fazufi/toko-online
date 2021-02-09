@@ -6,7 +6,7 @@ export default class BayarModule extends Component {
     return (
       <Modal
         show={this.props.show}
-        closeModal={this.props.closeModal}
+        // closeModal={this.props.closeModal}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
