@@ -3,15 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import Swal from "sweetalert2";
 import "./App.css";
-import stokproduk from "./product.json";
-import NavbarComponent from "./Components/NavbarComponent";
+import stokProduk from "./stokProduk.json";
+// import NavbarComponent from "./Components/NavbarComponent";
 import ProductComponent from "./Components/ProductComponent";
 import TroleyComponent from "./Components/TroleyComponent";
 import BayarModule from "./Components/BayarModule";
 
-export default class App extends Component {
+export default class TokoOnline extends Component {
   state = {
-    stokproduk,
+    // stokProduk,
+    stokProduk: JSON.parse(localStorage.getItem('stokProduk')),
     Troley: [],
     Total: "",
     show: false,
@@ -21,6 +22,9 @@ export default class App extends Component {
     const LocalTroley = localStorage.getItem("SimpanTroley");
     const Troley = LocalTroley ? JSON.parse(LocalTroley) : [];
     this.setState({ Troley });
+
+    localStorage.setItem('stokProduk', JSON.stringify(stokProduk))
+
   } 
 
   MasukTroley = (item) => {
@@ -44,6 +48,7 @@ export default class App extends Component {
 
   KeluarTroley = (item) => {
     const Troley = this.state.Troley;
+    
     const a = Troley.findIndex((p) => p.nama === item.nama);
     if (Troley[a].jumlah <= 1) {
       Troley.splice(a, 1);
@@ -76,15 +81,14 @@ export default class App extends Component {
 
   totalsemua = () => {
     const total = this.state.Troley;
-    const totalTroley = total.reduce((jml, currentValue) => {
-      return jml + currentValue.total;
-    }, 0);
+    const totalTroley = total.reduce((akumulator, currentValue) => akumulator + currentValue.total, 0)
+    // 0 itu untuk mendeklarasikan  initialvalue supaya Mengambil nilai pada objek array karena fungsi reduce tidak akan terjadi, tidak akan dieksekusi apabila array tidak memiliki nilai
     this.setState({ Total: totalTroley });
   };
   render() {
     return (
       <Container fluid>
-        <NavbarComponent />
+        {/* <NavbarComponent /> */}
         <Row>
           <ProductComponent
             {...this.state}

@@ -8,7 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.stylingmacam {
+  background-color: rgb(47, 200, 206);
+  color: white;
+  }
+  
 .navbar {
   background-color: rgb(119, 7, 7);
 }

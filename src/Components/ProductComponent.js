@@ -8,7 +8,16 @@ import {
 
 
 export default class ProductComponent extends Component {
+  masuk= (item) => {
+    this.props.MasukTroley(item);
+    Swal.fire({
+      title: item.nama + " Sukses Masuk Troley",                 
+      icon: "success",
+      timer: 2000,
+    });
+  }
   render() {
+    console.log(this.props.stokproduk)
     return (
       <Col sm={8}>
               <h4>
@@ -16,19 +25,12 @@ export default class ProductComponent extends Component {
               </h4>
               <hr />
       <CardDeck>
-        {this.props.stokproduk.map((item, b) => (
+        {this.props.stokProduk.map((item, b) => (
           <Col key={b} md={4} xs={6} className="mb-4">
             <Card
               bg="light"              
               className="shadow"
-              onClick={() => {
-                this.props.MasukTroley(item);
-                Swal.fire({
-                  title: item.nama + " Sukses Masuk Troley",                 
-                  icon: "success",
-                  timer: 2000,
-                });
-              }}
+              onClick={() => this.masuk(item)}
             >
               <Card.Img variant="top" src={"assets/" + item.gambar} />
               <Card.Body>
